@@ -63,6 +63,7 @@ void setup() {
   for(int i = 0 ; i < 10 ; i++){
     pinMode(lights[i], OUTPUT);
   }
+  toggle(13);
 }
 
 void loop() {
@@ -71,9 +72,11 @@ void loop() {
   
   switch(someChar){
    case 'a':  //Song a
+   toggle(13);
    //set notes[] and beats[] for song a.
    break;
    case 'b':  //Song b
+   toggle(13);
    //set notes[] and beats[] for song a.
    break;
    //etc.
