@@ -45,9 +45,9 @@ void playTone(int tone, int light, int duration) {
   digitalWrite(light, LOW);
 }
 
-void playNote(char note, int duration) {
-  char names[] = { 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#','b','b#', 'C' };
-  int tones[] = { 1915, 1805, 1700, 1608, 1519, 1432, 1355, 1275, 1205, 1136, 1073, 1014, 956 };
+void playNote(char note, int duration) {  
+  char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' };
+  int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956 };
   
   // play the tone corresponding to the note name
   for (int i = 0; i < 8; i++) {
@@ -66,6 +66,20 @@ void setup() {
 }
 
 void loop() {
+  // listen for new serial coming in:
+  char someChar = mySerial.read();
+  
+  switch(someChar){
+   case 'a':  //Song a
+   //set notes[] and beats[] for song a.
+   break;
+   case 'b':  //Song b
+   //set notes[] and beats[] for song a.
+   break;
+   //etc.
+  }
+  // print out the character:
+
   for (int i = 0; i < length; i++) {
     if (notes[i] == ' ') {
       delay(beats[i] * tempo); // rest
